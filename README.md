@@ -34,4 +34,3 @@ Special Characters Prompt:
 Depending on the criteria selected your new password will be generated in the text box for you to copy and paste!
 
 ![GeneratedPassword](./Develop/READMEimgs/Password.PNG)
-

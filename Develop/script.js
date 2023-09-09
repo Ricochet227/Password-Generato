@@ -52,9 +52,6 @@ function getPrompts(){
   }
   if(confirm("Do you want special characters in your password? (If no press cancel)")){
     choiceArr = choiceArr.concat(specialCharArr);
-  }else{
-    alert("Opps! Please select at least one criteria for your password")
-    choiceArr = [" "];
   }
   return true;
 }
