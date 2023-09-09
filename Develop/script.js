@@ -12,11 +12,13 @@ var specialCharArr =["!","#","$","%","&","*","+","/","<","=",">","?","@","^","~"
 // Write password to the #password input
 function writePassword() {
   var correctPrompts = getPrompts();
-  if (correctPrompts){
-  var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  if (correctPrompts){
+  var generatedPassword = generatePassword();
 
-  passwordText.value = password;
+  passwordText.value = generatedPassword;
+  }else{
+    passwordText.value = ""
   }
 }
 
@@ -24,13 +26,18 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
-
+  var password = "";
+  for(var i = 0; i < characterLength; i++){
+    var randomIndex = Math.floor(Math.random() * choiceArr.length)
+    password = password + choiceArr[randomIndex]
+  }
+  return password;
 }
 
 function getPrompts(){
   choiceArr = [];
   characterLength = parseInt(prompt("Pick any number between 8-128 characters for your password length"));
-  if(isNaN(characterLength) (characterLength < 8 ) (characterLength > 128)) {
+  if(isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
     alert("Your password has to be between 8-128 characters, try again!");
     return false;
   }
