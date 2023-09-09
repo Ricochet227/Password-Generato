@@ -38,7 +38,7 @@ function getPrompts(){
   choiceArr = [];
   characterLength = parseInt(prompt("Pick any number between 8-128 characters for your password length"));
   if(isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
-    alert("Your password has to be between 8-128 characters, try again!");
+    alert("Opps! Your password has to be a number between 8-128 characters, try again!");
     return false;
   }
   if(confirm("Do you want uppercasecase letters in your password? (If no press cancel)")){
